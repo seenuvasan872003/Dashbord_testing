@@ -132,7 +132,7 @@ export function CustomerDistribution() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm text-slate-600">Retention</p>
-                    <p className="text-xl font-bold text-slate-800">92.8%</p>
+                    <p className="text-xl font-bold text-slate-800">{returningCustomerPercentage.toFixed(1)}%</p>
                   </div>
                   <Users className="w-6 h-6 text-orange-500" />
                 </div>
