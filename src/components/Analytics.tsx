@@ -33,19 +33,7 @@ export function Analytics() {
           <div className="transform hover:scale-[1.02] transition-transform duration-300">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-1 shadow-xl border border-white/20">
               <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                      Performance Trends
-                    </h2>
-                    <p className="text-slate-500">Growth analytics & insights</p>
-                  </div>
-                </div>
+
                 <SalesChart />
               </div>
             </div>
