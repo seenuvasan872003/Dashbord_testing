@@ -1,5 +1,4 @@
 import React from 'react';
-import { KPICards } from './KPICards'
 import { AdvancedAnalytics, Insights } from './AdvancedAnalytics';
 import { TodaySellingProducts } from './TodaySellingProducts';
 import { SalesChart } from './SalesChart';
