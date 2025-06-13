@@ -6,7 +6,7 @@ import { SalesChart } from './SalesChart';
 import { PieChart } from './PieChart';
 import { CustomerInsights } from './CustomerInsights';
 import { BestProducts } from './BestProducts';
-import { CustomerDistribution } from './CustomerDistribution';
+import { CustomerDistribution, TopLocations } from './CustomerDistribution';
 
 export function Analytics() {
   return (
@@ -77,7 +77,7 @@ export function Analytics() {
           <div className="transform hover:scale-[1.02] transition-transform duration-300">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-1 shadow-xl border border-white/20">
               <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <CustomerDistribution />
+                <TopLocations />
               </div>
             </div>
           </div>
