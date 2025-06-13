@@ -18,7 +18,7 @@ export function Analytics() {
                 <p className="text-lg text-slate-600">Deep insights and comprehensive performance analysis</p>
               </div>
 
-      <div className="px-4 space-y-8">
+      <div className="">
         {/* 1. Key Business Insights */}
         <section className="transform hover:scale-[1.01] transition-transform duration-300">
           <Insights/>
