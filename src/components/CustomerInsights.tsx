@@ -6,13 +6,6 @@ const customerData = {
   newCustomers: 89,
   returningCustomers: 1158,
   averageOrderValue: 1850,
-  topLocations: [
-    { city: 'Mumbai', customers: 342, percentage: 27.4 },
-    { city: 'Delhi', customers: 289, percentage: 23.2 },
-    { city: 'Bangalore', customers: 201, percentage: 16.1 },
-    { city: 'Chennai', customers: 156, percentage: 12.5 },
-    { city: 'Pune', customers: 123, percentage: 9.9 },
-  ],
 };
 
 export function CustomerInsights() {
@@ -90,41 +83,6 @@ export function CustomerInsights() {
             </div>
             <p className="text-sm text-slate-500 mt-1">{customerData.returningCustomers} customers</p>
           </div>
-        </div>
-      </div>
-      
-      {/* Top Locations */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/50">
-        <div className="flex items-center space-x-2 mb-4">
-          <MapPin className="w-5 h-5 text-orange-500" />
-          <h3 className="text-xl font-semibold text-slate-800">Top Locations</h3>
-        </div>
-        
-        <div className="space-y-3">
-          {customerData.topLocations.map((location, index) => (
-            <div key={location.city} className="flex items-center justify-between group">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                  {index + 1}
-                </div>
-                <div>
-                  <p className="text-base font-medium text-slate-800 group-hover:text-orange-600 transition-colors">
-                    {location.city}
-                  </p>
-                  <p className="text-sm text-slate-500">{location.customers} customers</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <p className="text-base font-semibold text-slate-800">{location.percentage}%</p>
-                <div className="w-16 bg-slate-200 rounded-full h-2 mt-1">
-                  <div
-                    className="bg-gradient-to-r from-orange-400 to-red-500 h-2 rounded-full transition-all duration-1000"
-                    style={{ width: `${location.percentage}%` }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </div>
