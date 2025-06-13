@@ -17,6 +17,57 @@ const customerStats = {
   ],
 };
 
+export function  TopLocations() {
+  return (
+    <div className="space-y-6">
+      {/* Top Locations */}
+      <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/50">
+        <div className="flex items-center space-x-3 mb-6">
+          <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+            <MapPin className="w-5 h-5 text-white" />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-slate-800">Top Locations</h2>
+            <p className="text-sm text-slate-500">Customer geographic distribution</p>
+          </div>
+        </div>
+        
+        <div className="space-y-3">
+          {customerStats.locations.map((location, index) => (
+            <div key={location.city} className="flex items-center justify-between group hover:bg-slate-50 p-3 rounded-lg transition-colors">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  {index + 1}
+                </div>
+                <div>
+                  <p className="font-medium text-slate-800 group-hover:text-orange-600 transition-colors">
+                    {location.city}
+                  </p>
+                  <p className="text-sm text-slate-500">{location.customers} customers</p>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="flex items-center space-x-2">
+                  <span className="text-sm font-semibold text-slate-800">{location.percentage}%</span>
+                  <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full font-medium">
+                    {location.growth}
+                  </span>
+                </div>
+                <div className="w-16 bg-slate-200 rounded-full h-2 mt-1">
+                  <div
+                    className="bg-gradient-to-r from-orange-400 to-red-500 h-2 rounded-full transition-all duration-1000"
+                    style={{ width: `${location.percentage}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function CustomerDistribution() {
   const newCustomerPercentage = (customerStats.newCustomers / customerStats.total) * 100;
   const returningCustomerPercentage = (customerStats.returningCustomers / customerStats.total) * 100;
