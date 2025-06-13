@@ -1,9 +1,11 @@
 import React from 'react';
+import { AdvancedAnalytics } from './AdvancedAnalytics';
+import { TodaySellingProducts } from './TodaySellingProducts';
 import { SalesChart } from './SalesChart';
 import { PieChart } from './PieChart';
-import { AdvancedAnalytics } from './AdvancedAnalytics';
-import { BestProducts } from './BestProducts';
 import { CustomerInsights } from './CustomerInsights';
+import { BestProducts } from './BestProducts';
+import { CustomerDistribution } from './CustomerDistribution';
 
 export function Analytics() {
   return (
@@ -14,32 +16,49 @@ export function Analytics() {
         <p className="text-lg text-slate-600">Deep insights and comprehensive performance analysis</p>
       </div>
 
-      {/* Advanced Analytics */}
+      {/* 1. Key Business Insights */}
       <div className="w-full">
         <AdvancedAnalytics />
       </div>
 
-      {/* Charts Section */}
-      <div className="grid grid-cols-1 gap-8">
-        {/* Sales Chart */}
+      {/* 2. Today Selling Products */}
+      <div className="w-full">
+        <TodaySellingProducts />
+      </div>
+
+      {/* 3. Performance Trends & Sales Revenue (Two Columns) */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
         <div className="w-full">
           <SalesChart />
         </div>
-        
-        {/* Pie Chart */}
         <div className="w-full">
-          <PieChart />
+          <SalesChart />
         </div>
       </div>
 
-      {/* Detailed Analysis */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
-        <div className="xl:col-span-2">
-          <BestProducts />
+      {/* 4. Revenue by Category & Customer Insights (Two Columns) */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <div className="w-full">
+          <PieChart />
         </div>
-        <div className="xl:col-span-1">
+        <div className="w-full">
           <CustomerInsights />
         </div>
+      </div>
+
+      {/* 5. Customer Distribution & Top Locations (Two Columns) */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+        <div className="w-full">
+          <CustomerDistribution />
+        </div>
+        <div className="w-full">
+          <CustomerDistribution />
+        </div>
+      </div>
+
+      {/* 6. Best Selling Products */}
+      <div className="w-full">
+        <BestProducts />
       </div>
     </div>
   );
