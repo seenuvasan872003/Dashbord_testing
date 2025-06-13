@@ -1,6 +1,6 @@
 import React from 'react';
 import { KPICards } from './KPICards'
-import { AdvancedAnalytics } from './AdvancedAnalytics';
+import { AdvancedAnalytics, Insights } from './AdvancedAnalytics';
 import { TodaySellingProducts } from './TodaySellingProducts';
 import { SalesChart } from './SalesChart';
 import { PieChart } from './PieChart';
@@ -21,7 +21,7 @@ export function Analytics() {
       <div className="px-4 space-y-8">
         {/* 1. Key Business Insights */}
         <section className="transform hover:scale-[1.01] transition-transform duration-300">
-          <KPICards/>
+          <Insights/>
         </section>
 
         {/* 2. Today Selling Products */}
