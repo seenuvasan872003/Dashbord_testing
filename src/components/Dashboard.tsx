@@ -12,7 +12,7 @@ export function Dashboard() {
   const [activeView, setActiveView] = useState<'dashboard' | 'analytics'>('dashboard');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="bg-gradient-to-br from-slate-50 to-blue-50">
       <Header activeView={activeView} onViewChange={setActiveView} />
       
       <main className="w-full">
@@ -26,7 +26,7 @@ export function Dashboard() {
               </div>
 
               {/* Dashboard Layout */}
-              <div className="space-y-6 lg:space-y-8">
+              <div className="space-y-6 lg:space-y-8 pb-8">
                 
                 {/* KPI Cards - Full width responsive grid */}
                 <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6">
@@ -54,7 +54,7 @@ export function Dashboard() {
                 </section>
                 
                 {/* Quick Actions */}
-                <section className="w-full pb-8">
+                <section className="w-full">
                   <QuickActions />
                 </section>
                 
