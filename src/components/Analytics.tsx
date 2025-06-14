@@ -9,15 +9,14 @@ import { CustomerDistribution, TopLocations } from './CustomerDistribution';
 
 export function Analytics() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      
-       {/* Dashboard Header */}
-              <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-slate-800 mb-2">Business Analytics</h1>
-                <p className="text-lg text-slate-600">Deep insights and comprehensive performance analysis</p>
-              </div>
+    <div className="w-full">
+      {/* Dashboard Header */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-slate-800 mb-2">Business Analytics</h1>
+        <p className="text-lg text-slate-600">Deep insights and comprehensive performance analysis</p>
+      </div>
 
-      <div className="px-4 space-y-8">
+      <div className="space-y-8 pb-8">
         {/* 1. Key Business Insights */}
         <section className="transform hover:scale-[1.01] transition-transform duration-300">
           <Insights/>
@@ -83,7 +82,7 @@ export function Analytics() {
         </section>
 
         {/* 6. Best Selling Products (Full Width) */}
-        <section className="transform hover:scale-[1.01] transition-transform duration-300 mb-8">
+        <section className="transform hover:scale-[1.01] transition-transform duration-300">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-1 shadow-xl border border-white/20">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <BestProducts />
