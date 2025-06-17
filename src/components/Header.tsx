@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Bell, Settings, User, Search, BarChart3, Home } from 'lucide-react';
 
 interface HeaderProps {
@@ -8,9 +8,9 @@ interface HeaderProps {
 
 export function Header({ activeView, onViewChange }: HeaderProps) {
   return (
-    <header className="bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="bg-white/80 backdrop-blur-md border-b border-slate-200/50 h-20">
+      <div className="container mx-auto px-6 py-4 h-full">
+        <div className="flex items-center justify-between h-full">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-3">
               <h1 className="text-xl font-bold text-green-400 text-slate-800">GoWhats</h1>

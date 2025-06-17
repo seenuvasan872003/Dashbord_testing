@@ -45,86 +45,72 @@ const achievements = [
     date: 'Last Week',
     icon: Users,
     color: 'text-blue-600 bg-blue-100'
-  },
-  {
-    title: 'Zero Returns',
-    description: '7 days with no returns',
-    date: 'This Week',
-    icon: TrendingUp,
-    color: 'text-green-600 bg-green-100'
   }
 ];
 
 export function BusinessMetrics() {
   return (
-    <div className="space-y-6">
-      {/* Monthly Targets */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/50">
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-            <Target className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <h2 className="text-xl font-bold text-slate-800">Monthly Targets</h2>
-            <p className="text-sm text-slate-500">Progress towards goals</p>
-          </div>
+    <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-200/50 h-full flex flex-col">
+      <div className="flex items-center space-x-2 mb-4">
+        <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+          <Target className="w-4 h-4 text-white" />
         </div>
-
-        <div className="space-y-4">
-          {metrics.map((metric, index) => (
-            <div key={index} className={`${metric.bgColor} rounded-xl p-4`}>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center space-x-3">
-                  <div className={`w-8 h-8 bg-gradient-to-r ${metric.color} rounded-lg flex items-center justify-center`}>
-                    <metric.icon className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-slate-800">{metric.title}</h3>
-                    <p className="text-sm text-slate-600">
-                      {typeof metric.current === 'number' && metric.current > 1000 
-                        ? `₹${metric.current.toLocaleString()}` 
-                        : metric.current} / {typeof metric.target === 'number' && metric.target > 1000 
-                        ? `₹${metric.target.toLocaleString()}` 
-                        : metric.target}
-                    </p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg font-bold text-slate-800">{metric.percentage}%</p>
-                </div>
-              </div>
-              <div className="w-full bg-white/50 rounded-full h-2">
-                <div
-                  className={`bg-gradient-to-r ${metric.color} h-2 rounded-full transition-all duration-1000`}
-                  style={{ width: `${metric.percentage}%` }}
-                ></div>
-              </div>
-            </div>
-          ))}
+        <div>
+          <h2 className="text-lg font-bold text-slate-800">Monthly Targets</h2>
+          <p className="text-xs text-slate-500">Progress towards goals</p>
         </div>
       </div>
 
-      {/* Recent Achievements */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/50">
-        <div className="flex items-center space-x-3 mb-6">
-          <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center">
-            <Award className="w-5 h-5 text-white" />
+      <div className="space-y-3 mb-4">
+        {metrics.map((metric, index) => (
+          <div key={index} className={`${metric.bgColor} rounded-lg p-3`}>
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center space-x-2">
+                <div className={`w-6 h-6 bg-gradient-to-r ${metric.color} rounded-md flex items-center justify-center`}>
+                  <metric.icon className="w-3 h-3 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-medium text-slate-800">{metric.title}</h3>
+                  <p className="text-xs text-slate-600">
+                    {typeof metric.current === 'number' && metric.current > 1000 
+                      ? `₹${metric.current.toLocaleString()}` 
+                      : metric.current} / {typeof metric.target === 'number' && metric.target > 1000 
+                      ? `₹${metric.target.toLocaleString()}` 
+                      : metric.target}
+                  </p>
+                </div>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-bold text-slate-800">{metric.percentage}%</p>
+              </div>
+            </div>
+            <div className="w-full bg-white/50 rounded-full h-2">
+              <div
+                className={`bg-gradient-to-r ${metric.color} h-2 rounded-full transition-all duration-1000`}
+                style={{ width: `${metric.percentage}%` }}
+              ></div>
+            </div>
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-slate-800">Recent Achievements</h2>
-            <p className="text-sm text-slate-500">Business milestones</p>
+        ))}
+      </div>
+
+      <div className="flex-1">
+        <div className="flex items-center space-x-2 mb-3">
+          <div className="w-6 h-6 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-md flex items-center justify-center">
+            <Award className="w-3 h-3 text-white" />
           </div>
+          <h3 className="text-sm font-bold text-slate-800">Recent Achievements</h3>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           {achievements.map((achievement, index) => (
-            <div key={index} className="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center ${achievement.color}`}>
-                <achievement.icon className="w-4 h-4" />
+            <div key={index} className="flex items-center space-x-2 p-2 bg-slate-50 rounded-lg">
+              <div className={`w-6 h-6 rounded-full flex items-center justify-center ${achievement.color}`}>
+                <achievement.icon className="w-3 h-3" />
               </div>
               <div className="flex-1">
-                <h3 className="font-medium text-slate-800">{achievement.title}</h3>
-                <p className="text-sm text-slate-600">{achievement.description}</p>
+                <h4 className="text-sm font-medium text-slate-800">{achievement.title}</h4>
+                <p className="text-xs text-slate-600">{achievement.description}</p>
               </div>
               <div className="text-xs text-slate-500">{achievement.date}</div>
             </div>

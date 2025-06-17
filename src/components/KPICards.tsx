@@ -60,12 +60,12 @@ export function KPICards() {
       {kpiData.map((kpi, index) => (
         <div
           key={index}
-          className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/50 hover:shadow-md transition-all duration-300 group"
+          className="bg-white rounded-xl p-3 shadow-sm border border-slate-200/50 hover:shadow-md transition-all duration-300 group"
         >
-          <div className="flex items-start justify-between mb-4">
-            <div className={`w-10 h-10 sm:w-12 sm:h-12 ${kpi.bgColor} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-              <div className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r ${kpi.color} rounded-md flex items-center justify-center`}>
-                <kpi.icon className="w-3 h-3 text-white" />
+          <div className="flex items-center justify-between mb-2">
+            <div className={`w-8 h-8 ${kpi.bgColor} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-4 h-4 bg-gradient-to-r ${kpi.color} rounded-sm flex items-center justify-center`}>
+                <kpi.icon className="w-2.5 h-2.5 text-white" />
               </div>
             </div>
             <div className={`flex items-center space-x-1 text-xs font-medium ${
@@ -81,9 +81,9 @@ export function KPICards() {
           </div>
           
           <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-1">{kpi.value}</h3>
-            <p className="text-sm text-slate-500">{kpi.title}</p>
-            <p className="text-xs text-slate-400 mt-1">{kpi.subtitle}</p>
+            <h3 className="text-lg font-bold text-slate-800 mb-1">{kpi.value}</h3>
+            <p className="text-xs text-slate-500">{kpi.title}</p>
+            <p className="text-xs text-slate-400">{kpi.subtitle}</p>
           </div>
         </div>
       ))}

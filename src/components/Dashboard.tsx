@@ -12,56 +12,66 @@ export function Dashboard() {
   const [activeView, setActiveView] = useState<'dashboard' | 'analytics'>('dashboard');
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="bg-gradient-to-br from-slate-50 to-blue-50 h-screen overflow-hidden">
       <Header activeView={activeView} onViewChange={setActiveView} />
       
-      <main className="w-full">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+      <main className="h-[calc(100vh-80px)] overflow-hidden">
+        <div className="container mx-auto px-4 py-4 h-full">
           {activeView === 'dashboard' ? (
-            <>
-              {/* Dashboard Header */}
-              <div className="text-center mb-8">
-                <h1 className="text-3xl font-bold text-slate-800 mb-2">Business Dashboard</h1>
-                <p className="text-lg text-slate-600">Real-time overview of your business operations</p>
+            <div className="h-full flex flex-col space-y-4">
+              {/* Dashboard Header - Compact */}
+              <div className="text-center">
+                <h1 className="text-2xl font-bold text-slate-800">Business Dashboard</h1>
+                <p className="text-sm text-slate-600">Real-time business overview</p>
               </div>
 
-              {/* Dashboard Layout */}
-              <div className="space-y-6 lg:space-y-8 pb-8">
+              {/* Main Dashboard Grid - Fixed Height */}
+              <div className="flex-1 grid grid-cols-12 gap-4 min-h-0">
                 
-                {/* KPI Cards - Full width responsive grid */}
-                <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6">
-                  <KPICards />
-                </section>
+                {/* Left Column - KPIs and Quick Actions */}
+                <div className="col-span-3 flex flex-col space-y-4">
+                  {/* KPI Cards - Vertical Stack */}
+                  <div className="flex-1 space-y-3">
+                    <KPICards />
+                  </div>
+                  
+                  {/* Quick Actions - Compact */}
+                  <div className="h-48">
+                    <QuickActions />
+                  </div>
+                </div>
                 
-                {/* Recent Orders & Business Metrics */}
-                <section className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
-                  <div className="xl:col-span-2">
+                {/* Center Column - Recent Orders */}
+                <div className="col-span-5">
+                  <div className="h-full">
                     <RecentOrders />
                   </div>
-                  <div className="xl:col-span-1">
+                </div>
+                
+                {/* Right Column - Metrics, Alerts, Announcements */}
+                <div className="col-span-4 flex flex-col space-y-4">
+                  {/* Business Metrics */}
+                  <div className="flex-1">
                     <BusinessMetrics />
                   </div>
-                </section>
-                
-                {/* Stock Alerts & Announcements */}
-                <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                  <div className="w-full">
-                    <StockAlerts />
+                  
+                  {/* Stock Alerts and Announcements - Side by Side */}
+                  <div className="grid grid-cols-2 gap-4 h-80">
+                    <div className="h-full">
+                      <StockAlerts />
+                    </div>
+                    <div className="h-full">
+                      <Announcements />
+                    </div>
                   </div>
-                  <div className="w-full">
-                    <Announcements />
-                  </div>
-                </section>
-                
-                {/* Quick Actions */}
-                <section className="w-full">
-                  <QuickActions />
-                </section>
+                </div>
                 
               </div>
-            </>
+            </div>
           ) : (
-            <Analytics />
+            <div className="h-full overflow-auto">
+              <Analytics />
+            </div>
           )}
         </div>
       </main>
