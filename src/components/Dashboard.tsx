@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Header } from './Header';
-import { Analytics } from './Analytics';
 import { OrderDashboard } from './OrderDashboard';
 
 export function Dashboard() {
@@ -11,13 +10,7 @@ export function Dashboard() {
       <Header activeView={activeView} onViewChange={setActiveView} />
       
       <main className="container mx-auto px-4 py-6">
-        {activeView === 'dashboard' ? (
-          <OrderDashboard />
-        ) : (
-          <div className="pb-8">
-            <Analytics />
-          </div>
-        )}
+        <OrderDashboard />
       </main>
     </div>
   );
