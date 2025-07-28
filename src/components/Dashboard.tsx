@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from './Header';
 import { OrderDashboard } from './OrderDashboard';
+import { CookieConsent } from './CookieConsent';
 
 export function Dashboard() {
   const [activeView, setActiveView] = useState<'dashboard' | 'analytics'>('dashboard');
@@ -12,6 +13,8 @@ export function Dashboard() {
       <main className="container mx-auto px-4 py-6">
         <OrderDashboard />
       </main>
+      
+      <CookieConsent />
     </div>
   );
 }
